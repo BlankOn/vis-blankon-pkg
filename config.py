@@ -1,39 +1,21 @@
 
 DOWNLOAD_DIR = 'data'
 
-ARCHS = ['i386', 'amd64']
+ARCHS = ['i386', 'amd64', 'armel', 'armhf']
 
-SECTIONS = ('main', 'universe', 'multiverse', 'restricted')
+SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
 
 DISTS = [
-    'warty', 'hoary', 'breezy', 'dapper', 'edgy', 'feisty', 'gutsy', 'hardy',
-    'intrepid', 'jaunty', 'karmic', 'lucid', 'maverick', 'natty', 'oneiric',
-    'precise', 'quantal', 'raring'
+    'rote', 'suroboyo' 
 ]
 
 REPOS = {
-    'warty': 'old',
-    'hoary': 'old',
-    'breezy': 'old',
-    'dapper': 'old',
-    'edgy': 'old',
-    'feisty': 'old',
-    'gutsy': 'old',
-    'hardy': 'current',
-    'intrepid': 'old',
-    'jaunty': 'old',
-    'karmic': 'old',
-    'lucid': 'current',
-    'maverick': 'old',
-    'natty': 'current',
-    'oneiric': 'current',
-    'precise': 'current',
-    'quantal': 'current',
-    'raring': 'current',
+    'rote': 'current',
+    'suroboyo': 'current',
 }
 
 BASE_URLS = {
-    'current': 'http://archive.ubuntu.com/ubuntu',
-    'old': 'http://old-releases.ubuntu.com/ubuntu'
+    'current': 'http://arsip.blankonlinux.or.id/blankon',
+    'old': 'http://arsip.blankonlinux.or.id/blankon-legacy'
 }
 
