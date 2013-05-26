@@ -4,10 +4,14 @@ ARCHS = ['i386', 'amd64', 'armel', 'armhf']
 SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
 
 DISTS = [
-    'ombilin', 'pattimura', 'rote', 'suroboyo' 
+    'konde', 'lontara', 'meuligoe', 'nanggar', 'ombilin', 'pattimura', 'rote', 'suroboyo' 
 ]
 
 REPOS = {
+    'konde': 'old',
+    'lontara': 'old',
+    'meuligoe': 'old',
+    'nanggar': 'old',
     'ombilin': 'old',
     'pattimura': 'old',
     'rote': 'current',
