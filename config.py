@@ -1,6 +1,4 @@
 
-ARCHS = ['i386', 'amd64', 'armel', 'armhf']
-=======
 ARCHS = ['i386', 'amd64']
 
 SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
