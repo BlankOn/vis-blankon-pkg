@@ -1,13 +1,15 @@
 
-ARCHS = ['i386', 'amd64']
+ARCHS = ['i386', 'amd64', 'armel', 'armhf']
 
 SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
 
 DISTS = [
-    'rote', 'suroboyo' 
+    'ombilin', 'pattimura', 'rote', 'suroboyo' 
 ]
 
 REPOS = {
+    'ombilin': 'old',
+    'pattimura': 'old',
     'rote': 'current',
     'suroboyo': 'current',
 }
