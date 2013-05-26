@@ -10,8 +10,8 @@ import config
 def d(*msg):
     print >>sys.stderr, ' '.join(map(str, msg))
 
-def get_path(dist, section, arch):
-    return os.path.join(config.DOWNLOAD_DIR, dist, section,
+def get_path(data_dir, dist, section, arch):
+    return os.path.join(data_dir, dist, section,
                         'binary-%s' % arch, 'Packages.bz2')
 
 def read_packages(f):
@@ -51,8 +51,10 @@ def read_packages(f):
 
         data[field] = value
 
-def analyze(dist, section, arch):
-    path = get_path(dist, section, arch)
+def analyze(data_dir, dist, section, arch):
+    path = get_path(data_dir, dist, section, arch)
+    if not os.path.exists(path):
+        return None
 
     f = bz2.BZ2File(path)
 
@@ -66,7 +68,7 @@ def analyze(dist, section, arch):
     return dict(count=count,
                 size=size)
 
-def collect_data():
+def collect_data(data_dir):
     total = len(config.DISTS) * len(config.SECTIONS) * len(config.ARCHS)
     index = 0
 
@@ -82,20 +84,25 @@ def collect_data():
             packages[arch][dist] = {}
 
             for section in config.SECTIONS:
-                data = analyze(dist, section, arch)
+                data = analyze(data_dir, dist, section, arch)
 
-                sizes[arch][dist][section] = data['size']
-                packages[arch][dist][section] = data['count']
+                status = 'FAIL'
+                if data is not None:
+                    sizes[arch][dist][section] = data['size']
+                    packages[arch][dist][section] = data['count']
+
+                    status = 'OK'
 
                 index += 1
-                d('%s of %s: %s %s %s' % (index, total,
-                                          dist, section, arch))
+                d('%s of %s: %s %s %s -> %s' % \
+                  (index, total, dist, section, arch, status))
 
     return dict(sizes=sizes,
                 packages=packages)
 
 def main():
-    data = collect_data()
+    data_dir = sys.argv[1]
+    data = collect_data(data_dir)
     print json.dumps(data)
 
 if __name__ == '__main__':
