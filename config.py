@@ -1,11 +1,7 @@
 
-<<<<<<< HEAD
-DOWNLOAD_DIR = 'data'
-
 ARCHS = ['i386', 'amd64', 'armel', 'armhf']
 =======
 ARCHS = ['i386', 'amd64']
->>>>>>> fajran/master
 
 SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
 

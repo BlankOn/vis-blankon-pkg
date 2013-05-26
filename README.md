@@ -1,10 +1,10 @@
 BlankOn Repository - Total Packages and Sizes
 ============================================
 
-This Git repository contains scripts I use to gather and visualize the Ubuntu
+This Git repository contains scripts I use to gather and visualize the BlankOn
 repositories in terms of total packages and their total size.
 
-Check the GitHub page for the result - <http://arsip.blankonlinux.or.id/>.
+Check the GitHub page for the result - <http://arsip.blankonlinux.or.id>.
 
 How?
 ----
@@ -16,6 +16,7 @@ excluded the `-updates` and `-security` repositories. The at-release repository
 is presumably frozen and therefore the size won’t change anymore, where the
 latest two repositories are for the updates, which by definition are always
 updated.  Well.. except when the release is not supported anymore.
+
 
 
 How To Run?
