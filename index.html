@@ -68,6 +68,24 @@ function draw() {
             isStacked: true}
       );
 
+new google.visualization.ColumnChart(document.getElementById('package-armel')).
+      draw(data['packages']['amdarmel'],
+           {width: 800,
+            height: 400,
+            vAxis: {title: "Packages"},
+            hAxis: {title: "Releases"},
+            isStacked: true}
+      );
+
+  new google.visualization.ColumnChart(document.getElementById('size-armhf')).
+      draw(groupSize(data['sizes']['armhf']),
+           {width: 800,
+            height: 400,
+            vAxis: {title: "Size", format: "#,### MB"},
+            hAxis: {title: "Releases"},
+            isStacked: true}
+      );
+
 }
 
 document.onload = function() {
