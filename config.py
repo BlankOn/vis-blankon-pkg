@@ -4,7 +4,7 @@ ARCHS = ['i386', 'amd64', 'armel', 'armhf']
 SECTIONS = ('main', 'extras', 'extras-restricted', 'restricted')
 
 DISTS = [
-    'konde', 'lontara', 'meuligoe', 'nanggar', 'ombilin', 'pattimura', 'rote', 'suroboyo' 
+    'konde', 'lontara', 'meuligoe', 'nanggar', 'ombilin', 'pattimura', 'rote', 'suroboyo', 'tambora' 
 ]
 
 REPOS = {
@@ -16,6 +16,7 @@ REPOS = {
     'pattimura': 'old',
     'rote': 'current',
     'suroboyo': 'current',
+    'tambora': 'current',
 }
 
 BASE_URLS = {
